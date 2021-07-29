@@ -31,18 +31,18 @@ posY = altura_Da_Tela/2 - altura_App/2
 
 window.title("Titulo")
 window.geometry("%dx%d+%d+%d" % (largura_App, altura_App, posX, posY))
+#   isso faz o GUI aparecer no meio da tela
 
 #   procurar como colocar uma lista e escolher o número
 Label(window, text="Força:").grid(row=0, sticky=W)
 En = Entry(window)
 En.grid(row=0, column=1)
+#   o resto das labels estão no GUI1
 
 
 reg = window.register(callback)
 En.config(validate="key",
           validatecommand=(reg, '%P'))
-
-#   num = random.randint(1,20)
 
 
 def comando():
@@ -50,6 +50,11 @@ def comando():
     #   print(num+int(En.get()))
 
 
+#   def dado():
+    #   num = random.randint(1, 20)
+
+
 Button(window, text="Contar", command=comando).grid(row=1, column=1)
+#   Button(window, text="Contar", command=dado).grid(row=2, column=1)
 
 window.mainloop()

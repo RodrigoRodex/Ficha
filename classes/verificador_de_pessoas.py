@@ -12,7 +12,7 @@ while True:
         break
     except ValueError:
         print('Apenas números inteiros, por favor\n')
-        #   \n ta com problema
+        #   \n está gerando duas linhas, é para gerar apenas uma
 
 while True:
     try:
@@ -53,7 +53,7 @@ while True:
 #   adicionar novas funções, uma pra cada modificador
 #   colocar dentro do while qual modificador eu quero
 #   soma de modificadores
-
+#   o 2 é a proficiencia
 c = Calculadora(For, Car, Const, Inte, Dex, Sab, 2)
 
 
