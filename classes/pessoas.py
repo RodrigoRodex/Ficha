@@ -18,7 +18,7 @@ class Calculadora:
         if finalFor < 0:
             return 0
         else:
-            return finalFor
+            return 1
 
     def somaCar(self):
         dadinhoCar = random.randint(1, 20)
