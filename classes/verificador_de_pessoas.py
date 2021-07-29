@@ -37,7 +37,7 @@ while True:
 
 while True:
     try:
-        Dex = int(input('\nQual a Destreza?'))
+        Dex = int(input('\nQual a Destrezaaaaaaaaa?'))
         break
     except ValueError:
         print('Apenas números inteiros, por favor\n')
