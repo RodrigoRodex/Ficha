@@ -1,6 +1,7 @@
+from class_GUi import Num_Entry
 from tkinter import Button, Entry, Label, Tk
 from tkinter.constants import DISABLED, W
-#   import random
+import random
 
 
 def callback(input):
@@ -44,17 +45,18 @@ reg = window.register(callback)
 En.config(validate="key",
           validatecommand=(reg, '%P'))
 
+For_enntry = int(En.get())
+
+Num = Num_Entry(For_enntry)
+
 
 def comando():
-    En.config(state=DISABLED)
-    #   print(num+int(En.get()))
+    #   En.config(state=DISABLED)
+    #   o disable serve pra travar e não deixar a pessoa mudar o
+    #   número das habilidades
+    num = random.randint(1, 20)
 
 
-#   def dado():
-    #   num = random.randint(1, 20)
-
-
-Button(window, text="Contar", command=comando).grid(row=1, column=1)
-#   Button(window, text="Contar", command=dado).grid(row=2, column=1)
+Button(window, text="Contar", command=Num.soma).grid(row=1, column=1)
 
 window.mainloop()
