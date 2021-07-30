@@ -1,0 +1,4 @@
+discord.py
+libnacl
+python-dotenv
+dotenv
