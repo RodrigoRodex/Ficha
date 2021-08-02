@@ -20,6 +20,7 @@ def callback(input):
 
 
 window = Tk()
+reg = window.register(callback)
 
 largura_App = 400
 altura_App = 350
@@ -38,7 +39,6 @@ window.geometry("%dx%d+%d+%d" % (largura_App, altura_App, posX, posY))
 Label(window, text="Força:").grid(row=0, sticky=W)
 En_For = Entry(window)
 En_For.grid(row=0, column=1)
-reg = window.register(callback)
 En_For.config(validate="key",
               validatecommand=(reg, '%P'))
 
@@ -136,5 +136,26 @@ def Destreza():
 
 Button(window,
        text="Contar a Destreza",
-       command=Inteligência).grid(row=10, column=1)
+       command=Destreza).grid(row=10, column=1)
+
+
+Label(window, text="Sabedoria:").grid(row=11, sticky=W)
+En_Sab = Entry(window)
+En_Sab.grid(row=11, column=1)
+En_Sab.config(validate="key",
+              validatecommand=(reg, '%P'))
+
+
+def Sabedoria():
+    En_Sab.config(state=(DISABLED))
+    num = random.randint(1, 20)
+    Sab_Entry = int(En_Sab.get())
+    Soma = (Sab_Entry + num)
+    Label(window,
+          text=Soma).grid(row=11, column=2)
+
+
+Button(window,
+       text="Contar Sabedoria",
+       command=Sabedoria).grid(row=12, column=1)
 window.mainloop()
