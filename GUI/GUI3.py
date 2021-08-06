@@ -1,6 +1,5 @@
 from tkinter import Button, Entry, Label, Tk
-from tkinter.constants import DISABLED
-import random
+from defGUI import Classe
 
 
 def volta(input):
@@ -20,7 +19,6 @@ def volta(input):
 
 Janela = Tk()
 
-reg = Janela.register(volta)
 largura_App = 400
 altura_App = 350
 
@@ -40,66 +38,16 @@ En_Inte = Entry(Janela)
 En_Dex = Entry(Janela)
 En_Sab = Entry(Janela)
 
+c = Classe(Janela, En_For, En_Car,
+           En_Const, En_Inte, En_Dex, En_Sab)
+reg = Janela.register(volta)
+
 Text_For = "Contar a Força"
 Text_Car = "Contar o Carisma"
 Text_Const = "Contar a Constituição"
 Text_Inte = "Contar a Inteligência"
 Text_Dex = "Contar a Destreza"
 Text_Sab = "Contar a Sabedoria"
-
-
-def Força():
-    En_For.config(state=DISABLED)
-    num = random.randint(1, 20)
-    Entrada_For = int(En_For.get())
-    Soma = (num + Entrada_For)
-    Label(Janela,
-          text=Soma).grid(row=1, column=4)
-
-
-def Carisma():
-    En_Car.config(state=DISABLED)
-    num = random.randint(1, 20)
-    Entrada_Car = int(En_Car.get())
-    Soma = (num + Entrada_Car)
-    Label(Janela,
-          text=Soma).grid(row=2, column=4)
-
-
-def Constituição():
-    En_Const.config(state=DISABLED)
-    num = random.randint(1, 20)
-    Entrada_Const = int(En_Const.get())
-    Soma = (num + Entrada_Const)
-    Label(Janela,
-          text=Soma).grid(row=3, column=4)
-
-
-def Inteligência():
-    En_Inte.config(state=DISABLED)
-    num = random.randint(1, 20)
-    Entrada_Inte = int(En_Inte.get())
-    Soma = (num + Entrada_Inte)
-    Label(Janela,
-          text=Soma).grid(row=4, column=4)
-
-
-def Destreza():
-    En_Dex.config(state=DISABLED)
-    num = random.randint(1, 20)
-    Entrada_Dex = int(En_Dex.get())
-    Soma = (num + Entrada_Dex)
-    Label(Janela,
-          text=Soma).grid(row=5, column=4)
-
-
-def Sabedoria():
-    En_Sab.config(state=DISABLED)
-    num = random.randint(1, 20)
-    Entrada_Sab = int(En_Sab.get())
-    Soma = (num + Entrada_Sab)
-    Label(Janela,
-          text=Soma).grid(row=6, column=4)
 
 
 Atributos = [("Força:", En_For, 1, 1, 1, 2),
@@ -109,12 +57,12 @@ Atributos = [("Força:", En_For, 1, 1, 1, 2),
              ("Destreza:", En_Dex, 5, 1, 5, 2),
              ("Sabedoria:", En_Sab, 6, 1, 6, 2)]
 
-valores = [(1, 3, Text_For, Força),
-           (2, 3, Text_Car, Carisma),
-           (3, 3, Text_Const, Constituição),
-           (4, 3, Text_Inte, Inteligência),
-           (5, 3, Text_Dex, Destreza),
-           (6, 3, Text_Sab, Sabedoria)]
+valores = [(1, 3, Text_For, c.Força),
+           (2, 3, Text_Car, c.Carisma),
+           (3, 3, Text_Const, c.Constituição),
+           (4, 3, Text_Inte, c.Inteligência),
+           (5, 3, Text_Dex, c.Destreza),
+           (6, 3, Text_Sab, c.Sabedoria)]
 
 for name, En_name, r_val, c_val, r_val2, c_val2 in Atributos:
     Label(Janela,
