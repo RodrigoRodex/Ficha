@@ -216,6 +216,8 @@ class pericias:
                 if Vari.get() is True:
                     #   se for True, soma 1 em conta
                     conta += 1
+                    #   isso serve pra verificar se as
+                    #   pericias foram escolhidas
                     #   se conta bater certo número
                     if conta == 2:
                         #   cria um botão e um optionmenu

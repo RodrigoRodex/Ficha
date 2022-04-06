@@ -175,6 +175,7 @@ RadRad18 = Radiobutton(Janela,
 RadRad18.grid(row=16, column=3)
 
 #   deixar todas setadas como bloqueadas antes de escolher a classe
+
 if ClaVar.get() not in classes:
     RadRad1.config(state=DISABLED)
     RadRad2.config(state=DISABLED)
